@@ -26,27 +26,23 @@
         }
 
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./dabboo_server_wiki_logo.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./dabboo_server_wiki_logo.png');
             background-size: cover;
             background-position: center;
-            padding: 100px 20px;
+            padding: 18px 20px;
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
-        header h1 {
-            color: white;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        header p {
-            color: white;
-            font-size: 1.1em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        .header-title {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.5));
         }
 
         .nav-container {
@@ -354,8 +350,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>⛏️ 다뿌 서버 위키</h1>
-            <p>마인크래프트 다뿌 서버의 모든 정보를 한곳에</p>
+            <img src="./dabboo_server_wiki_title.png" alt="다뿌 서버 위키 - 마인크래프트 다뿌 서버의 모든 정보를 한곳에" class="header-title">
         </header>
 
         <div class="nav-container">
