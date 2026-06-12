@@ -112,6 +112,25 @@
             margin-bottom: 15px;
         }
 
+        .card-image {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            min-height: 200px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
+
+        .card-image .card-link {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 10px 25px;
+            text-align: center;
+            width: 100%;
+        }
+
         .card-link {
             color: #667eea;
             text-decoration: none;
@@ -359,6 +378,8 @@
                 <a href="#" onclick="showPage('rules'); return false;">서버 규칙</a>
                 <a href="#" onclick="showPage('items'); return false;">아이템</a>
                 <a href="#" onclick="showPage('enhancement'); return false;">증강</a>
+                <a href="#" onclick="showPage('minigame'); return false;">미니게임</a>
+                <a href="#" onclick="showPage('enchant'); return false;">강화</a>
                 <a href="#" onclick="showPage('api'); return false;">API</a>
             </nav>
         </div>
@@ -366,42 +387,31 @@
         <!-- 홈 -->
         <div id="home" class="page active">
             <div class="content">
-                <div class="card">
-                    <h2>📖 서버 규칙</h2>
-                    <p>다뿌 서버에서 지켜야 할 규칙을 확인하세요.</p>
+                <div class="card card-image" onclick="showPage('rules'); return false;" style="background-image: url('./dabboo_rule_card.png');">
                     <a href="#" onclick="showPage('rules'); return false;" class="card-link">자세히 보기 →</a>
                 </div>
-                <div class="card">
-                    <h2>⚒️ 아이템</h2>
-                    <p>서버에서 사용 가능한 특수 아이템을 확인하세요.</p>
+                <div class="card card-image" onclick="showPage('items'); return false;" style="background-image: url('./dabboo_item_card.png');">
                     <a href="#" onclick="showPage('items'); return false;" class="card-link">자세히 보기 →</a>
                 </div>
-                <div class="card">
-                    <h2>✨ 증강</h2>
-                    <p>플레이어를 강화하는 시스템을 확인하세요.</p>
+                <div class="card card-image" onclick="showPage('enhancement'); return false;" style="background-image: url('./dabboo_augments_card.png');">
                     <a href="#" onclick="showPage('enhancement'); return false;" class="card-link">자세히 보기 →</a>
                 </div>
-                <div class="card">
-                    <h2>🔌 API</h2>
-                    <p>SOOP 방송 플랫폼의 후원을 통해 인게임에 직접 영향을 줄 수 있는 시스템입니다.</p>
+                <div class="card card-image" onclick="showPage('minigame'); return false;" style="background-image: url('./dabboo_minigame_card.png');">
+                    <a href="#" onclick="showPage('minigame'); return false;" class="card-link">자세히 보기 →</a>
+                </div>
+                <div class="card card-image" onclick="showPage('enchant'); return false;" style="background-image: url('./dabboo_enchant_card.png');">
+                    <a href="#" onclick="showPage('enchant'); return false;" class="card-link">자세히 보기 →</a>
+                </div>
+                <div class="card card-image" onclick="showPage('api'); return false;" style="background-image: url('./dabboo_api_card.png');">
                     <a href="#" onclick="showPage('api'); return false;" class="card-link">자세히 보기 →</a>
                 </div>
             </div>
         </div>
 
         <!-- 서버 규칙 -->
-        <div id="rules" class="page">
+        <div id="rules" class="page" style="max-width: 640px; margin: 0 auto;">
             <a href="#" onclick="showPage('home'); return false;" class="back-link">← 돌아가기</a>
-            <h1>📖 서버 규칙</h1>
-
-            <h2 id="basic-rules">기본 규칙</h2>
-            <ul>
-                <li>비방금지</li>
-                <li>네더, 엔더 겉날개 사용 금지</li>
-                <li>수직굴 금지</li>
-                <li>무한 용암 5개 제한</li>
-                <li>인챈트 아이템 거래 금지</li>
-            </ul>
+            <img src="./dabboo_rule.png" alt="서버 규칙" style="width: 100%; height: auto; display: block;">
         </div>
 
         <!-- 증강 -->
@@ -546,48 +556,19 @@
         </div>
 
         <!-- 아이템 -->
-        <div id="items" class="page">
+        <div id="items" class="page" style="max-width: 640px; margin: 0 auto;">
             <a href="#" onclick="showPage('home'); return false;" class="back-link">← 돌아가기</a>
-            <h1>⚒️ 아이템</h1>
+            <img src="./dabboo_item.png" alt="아이템" style="width: 100%; height: auto; display: block;">
+        </div>
 
-            <table class="table">
-                <tr>
-                    <th>아이템</th>
-                    <th>설명</th>
-                </tr>
-                <tr>
-                    <td><strong>두쫀뿌</strong></td>
-                    <td>섭취 시 허기를 모두 채웁니다.</td>
-                </tr>
-                <tr>
-                    <td><strong>인벤토리 보호권</strong></td>
-                    <td>사망 시 인벤토리와 경험치를 전부 보호합니다.</td>
-                </tr>
-                <tr>
-                    <td><strong>귀환권</strong></td>
-                    <td>사용 시 로비로 귀환합니다.</td>
-                </tr>
-                <tr>
-                    <td><strong>리턴권</strong></td>
-                    <td>사용 시 마지막으로 사망한 위치로 이동합니다.</td>
-                </tr>
-                <tr>
-                    <td><strong>텔포권</strong></td>
-                    <td>원하는 플레이어에게 이동할 수 있습니다. (명령어: /텔포권 &lt;player&gt;)</td>
-                </tr>
-                <tr>
-                    <td><strong>다뿌서버1 초대권</strong></td>
-                    <td>운영자를 호출하여 원하는 스트리머를 초대할 수 있습니다.</td>
-                </tr>
-                <tr>
-                    <td><strong>뿌 코인 주머니</strong></td>
-                    <td>사용 시 뿌 코인 20개 ~ 100개 랜덤 지급합니다.</td>
-                </tr>
-                <tr>
-                    <td><strong>강화석</strong></td>
-                    <td>강화창에서 사용할 수 있습니다.</td>
-                </tr>
-            </table>
+        <!-- 미니게임 -->
+        <div id="minigame" class="page">
+            <a href="#" onclick="showPage('home'); return false;" class="back-link">← 돌아가기</a>
+        </div>
+
+        <!-- 강화 -->
+        <div id="enchant" class="page">
+            <a href="#" onclick="showPage('home'); return false;" class="back-link">← 돌아가기</a>
         </div>
 
         <!-- API -->
