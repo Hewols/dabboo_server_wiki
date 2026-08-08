@@ -122,8 +122,8 @@
         .card-image {
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center top;
-            min-height: 200px;
+            background-position: center;
+            aspect-ratio: 2.7 / 1;
             padding: 0;
             display: flex;
             flex-direction: column;
@@ -444,14 +444,8 @@
                 <div class="card card-image" onclick="showPage('minigame'); return false;" style="background-image: url('./dabboo_minigame_card.png');"></div>
                 <div class="card card-image" onclick="showPage('enchant'); return false;" style="background-image: url('./dabboo_enchant_card.png');"></div>
                 <div class="card card-image" onclick="showPage('api'); return false;" style="background-image: url('./dabboo_api_card.png');"></div>
-                <div class="card card-text" onclick="showPage('shortcuts'); return false;">
-                    <span class="card-icon">⌨️</span>
-                    <span class="card-title">단축키</span>
-                </div>
-                <div class="card card-text" onclick="showPage('faq'); return false;">
-                    <span class="card-icon">❓</span>
-                    <span class="card-title">자주 묻는 질문</span>
-                </div>
+                <div class="card card-image" onclick="showPage('shortcuts'); return false;" style="background-image: url('./dabboo_key_card.png');"></div>
+                <div class="card card-image" onclick="showPage('faq'); return false;" style="background-image: url('./dabboo_qna_card.png');"></div>
             </div>
         </div>
 
