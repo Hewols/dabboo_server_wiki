@@ -471,7 +471,9 @@
     <script>
         (function () {
             var openAt = new Date('2026-08-14T15:00:00Z');
-            if (new Date() >= openAt) {
+            // 주소 뒤에 ?preview 또는 #preview 를 붙이면 오픈 전에도 위키를 확인할 수 있습니다.
+            var preview = (location.search + location.hash).indexOf('preview') !== -1;
+            if (preview || new Date() >= openAt) {
                 var gate = document.getElementById('countdown-gate');
                 if (gate) gate.remove();
             } else {
@@ -946,6 +948,11 @@
                     <td>우편함에 일반 상자 1개 지급</td>
                 </tr>
                 <tr>
+                    <td>444개</td>
+                    <td>😈 괴롭히기</td>
+                    <td>랜덤 위치로 이동 / 순회공연 (30초씩 4명) / 나무 곡괭이로 변경</td>
+                </tr>
+                <tr>
                     <td>500개</td>
                     <td>💎 빅 다이아 추가</td>
                     <td>목표 다이아몬드 개수 550개 ~ 2,750개 랜덤 추가</td>
@@ -981,24 +988,36 @@
 
             <table class="table">
                 <tr>
-                    <th>후원 개수</th>
+                    <th style="width: 120px;">후원 개수</th>
                     <th>효과</th>
-                    <th>설명</th>
+                </tr>
+                <tr>
+                    <td>114개</td>
+                    <td style="white-space: normal;">📦 전체유저 일반상자</td>
+                </tr>
+                <tr>
+                    <td>333개</td>
+                    <td style="white-space: normal;">😈 전체유저 괴롭히기 (맞춤법 / 영어 받아쓰기 / 한글 받아쓰기 — 성공 시 감소룰렛 + 일반상자 │ 실패 시 증가룰렛 + 증강봉인 1분)</td>
                 </tr>
                 <tr>
                     <td>444개</td>
-                    <td>📝 영어/한글 받아쓰기</td>
-                    <td>채팅과 화면에 표시되는 받아쓰기 게임을 진행</td>
+                    <td style="white-space: normal;">🎪 섭주 순회공연 (20초씩 10명)</td>
+                </tr>
+                <tr>
+                    <td>555개</td>
+                    <td style="white-space: normal;">🎁 전체유저 고급상자</td>
                 </tr>
                 <tr>
                     <td>777개</td>
-                    <td>⬅️➡️ 방향키 리듬게임</td>
-                    <td>화면에 표시되는 방향키를 보고 WASD를 이용해 맞추는 게임을 진행</td>
+                    <td style="white-space: normal;">⏰ 서버 기간 연장 6시간 (최대 9월 3일 22시까지)</td>
+                </tr>
+                <tr>
+                    <td>888개</td>
+                    <td style="white-space: normal;">📦 상자 오픈 피버 88초</td>
                 </tr>
                 <tr>
                     <td>999개</td>
-                    <td>🎰 다이아 룰렛 2배 99초</td>
-                    <td>목표 다이아몬드 룰렛 효과 2배 적용 (99초 지속)</td>
+                    <td style="white-space: normal;">🎰 다이아 룰렛 피버 99초</td>
                 </tr>
             </table>
 
@@ -1013,12 +1032,12 @@
 
             <h3>섭주 API 작동 예시</h3>
             <ul>
-                <li>시청자가 444개 후원 → 영어/한글 받아쓰기 게임 진행</li>
+                <li>시청자가 333개 후원 → 전체 유저 괴롭히기 진행</li>
             </ul>
 
             <h2>주의사항</h2>
             <ul>
-                <li>다이아 룰렛 2배 효과는 지속 시간이 중첩되어 여러번 후원 시 시간이 추가됩니다</li>
+                <li>피버 효과는 지속 시간이 중첩되어 여러번 후원 시 시간이 추가됩니다</li>
             </ul>
         </div>
 
